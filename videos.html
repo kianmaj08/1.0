@@ -28,6 +28,7 @@
         <a href="powerpoints.html" data-i18n="nav_pp" class="">PowerPoints</a>
         <a href="videos.html" data-i18n="nav_videos" class="active">Videos</a>
               <a href="spiele.html" data-i18n="nav_games" class="">Spiele</a>
+              <a href="spiele.html" data-i18n="nav_games" class="">Spiele</a>
       </nav>
       <div class="right"><button class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menü">
           <span class="menu-icon" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
@@ -53,14 +54,12 @@
 </div>
   </section>
 
-  <section class="section">
-    <div class="container" style="text-align:center; padding:40px 0;">
-      <div class="coming-soon" style="font-size:1.2rem; color:#6B7280; font-weight:700;">Coming soon</div>
+    <section class="section">
+    <div class="container">
+      <div id="pageGrid" class="card-grid two-cols"></div>
     </div>
   </section>
-
-
-  <footer>
+<footer>
     <div class="container footer-inner">
       <a class="cta-button" href="add-website.html" data-i18n="cta_add">Projekt hinzufügen</a>
       <div class="footer-meta">© 2025 oberstufe.site – v2.38a</div>
@@ -361,35 +360,36 @@
 
 
 
+
 <script>
-(function(){{
-  async function loadCards(){{ 
-    const r=await fetch('/data/cards.json',{{cache:'no-cache'}}); 
-    const d=await r.json(); 
-    return (d.cards||[]).filter(c=>c.is_published!==false); 
-  }}
-  function tagPill(tag){{ return tag?`<span class="tag ${tag}">${tag}</span>`:''; }}
-  function statusBtnHTML(status){{ 
-    const map={{ fertig:['Fertig','status-done'], in_arbeit:['In Arbeit','status-in'], test:['Test','status-test'], coming_soon:['Coming Soon','status-soon'] }};
-    const x=map[status]; return x?`<span class="status-btn ${x[1]}">${x[0]}</span>`:''; 
-  }}
-  function cardHTML(c){{
+(function(){
+  async function loadCards(){
+    const r=await fetch('/data/cards.json',{cache:'no-cache'});
+    const d=await r.json();
+    return (d.cards||[]).filter(c=>c.is_published!==false);
+  }
+  function tagPill(tag){ return tag?`<span class="tag ${tag}">${tag}</span>`:''; }
+  function statusBtnHTML(status){
+    const map={ fertig:['Fertig','status-done'], in_arbeit:['In Arbeit','status-in'], test:['Test','status-test'], coming_soon:['Coming Soon','status-soon'] };
+    const x=map[status]; return x?`<span class="status-btn ${x[1]}">${x[0]}</span>`:'';
+  }
+  function cardHTML(c){
     const tag=(c.tag||'').toLowerCase();
-    return `<div class="card card--${{tag}}">`
-      + (c.image_url?`<img class="card-thumb" src="${{c.image_url}}" alt="">`:``)
-      + `<h3>${{c.title||''}}</h3>`
-      + (c.subtitle?`<p class="muted">${{c.subtitle}}</p>`:``)
-      + `<div class="row-tags"><div class="left">${{tagPill(tag)}}</div></div>`
-      + `<div class="actions"><a class="btn btn-primary" href="${{c.url}}" target="_blank" rel="noopener">Öffnen</a>${{statusBtnHTML(c.status)}}</div>`
+    return `<div class="card card--${tag}">`
+      + (c.image_url?`<img class="card-thumb" src="${c.image_url}" alt="">`:``)
+      + `<h3>${c.title||''}</h3>`
+      + (c.subtitle?`<p class="muted">${c.subtitle}</p>`:``)
+      + `<div class="row-tags"><div class="left">${tagPill(tag)}</div></div>`
+      + `<div class="actions"><a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a>${statusBtnHTML(c.status)}</div>`
       + `</div>`;
-  }}
-  document.addEventListener('DOMContentLoaded', async ()=>{{ 
+  }
+  document.addEventListener('DOMContentLoaded', async ()=>{
     const cards=await loadCards();
-    const list = cards.filter(c=> (c.page||'videos')==='videos');
+    const list = cards.filter(c=> (c.page||'')==='videos');
     const grid=document.getElementById('pageGrid');
     if(grid) grid.innerHTML = list.map(cardHTML).join('');
-  }});
-}})();
+  });
+})();
 </script>
 
 </body>
