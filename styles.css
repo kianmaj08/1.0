@@ -3369,3 +3369,29 @@ header::before,
 
 /* Fix: show modal when class 'open' is added */
 .modal.open{ display:block !important; }
+
+
+/* Modal layering fix: put glass layer inside modal above overlay */
+.modal::before{
+  z-index: 0 !important;
+}
+.modal > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Also ensure dropdown and search use safe layering */
+.dropdown::before, .search::before{
+  z-index: 0 !important;
+}
+.dropdown > *, .search > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Safety: avoid negative z-index for generic glass layers */
+header::before, .box::before, .btn::before, .menu-btn::before, .status::before,
+.qr-in-footer::before, .cta-button::before, .to-top::before, .feedback-btn::before{
+  z-index: 0;
+}
+
