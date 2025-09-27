@@ -3,7 +3,6 @@
     {
       "created_at": "",
       "url": "https://philexikon.netlify.app/",
-      "page": "home",
       "status": "in_arbeit",
       "subtitle": "Ein Lexikon für bekannte Philosophen.",
       "title": "Philexikon",
@@ -13,81 +12,74 @@
       "id": "Philexikon1244"
     },
     {
-      "url": "https://pieterbruegel.netlify.app/",
-      "page": "home",
+      "type": "website",
       "status": "in_arbeit",
-      "subtitle": "Biografie, Kunstwerke und Hintergründe des Renaissance- Künstlers",
+      "is_published": true,
+      "id": "Pieterbruegel",
       "title": "Pieter Bruegel",
-      "is_published": true,
-      "type": "website",
-      "tag": "kunst",
-      "id": "Pieterbruegel"
+      "subtitle": "Biografie, Kunstwerke und Hintergründe des Renaissance- Künstlers",
+      "url": "https://pieterbruegel.netlify.app/",
+      "tag": "kunst"
     },
     {
-      "url": "https://wienerkongress.netlify.app/",
-      "page": "home",
+      "type": "website",
       "status": "in_arbeit",
-      "subtitle": "Ein kurzer Überblick zum Wiener Kongress",
+      "is_published": true,
+      "id": "Wienerkongress",
       "title": "Wiener Kongress",
-      "is_published": true,
-      "type": "website",
-      "tag": "geschichte",
-      "id": "Wienerkongress"
+      "subtitle": "Ein kurzer Überblick zum Wiener Kongress",
+      "url": "https://wienerkongress.netlify.app/",
+      "tag": "geschichte"
     },
     {
-      "url": "https://chatbbc.netlify.app/",
-      "page": "home",
+      "type": "website",
       "status": "fertig",
-      "subtitle": "Eine Hochentwickelte Ai aus Azerbaidjan",
+      "is_published": true,
+      "id": "Closedai",
       "title": "ClosedAi - ChatBBC",
-      "is_published": true,
-      "type": "website",
-      "tag": "informatik",
-      "id": "Closedai"
+      "subtitle": "Eine Hochentwickelte Ai aus Azerbaidjan",
+      "url": "https://chatbbc.netlify.app/",
+      "tag": "informatik"
     },
     {
-      "url": "https://stochastosino.netlify.app/#",
-      "page": "spiele",
+      "type": "website",
       "status": "in_arbeit",
-      "subtitle": "Stochastik basierte Mathematik Spiele",
+      "is_published": true,
+      "id": "Stochastosino",
       "title": "Stochastosino Beta",
-      "is_published": true,
-      "type": "website",
-      "tag": "informatik",
-      "id": "Stochastosino"
+      "subtitle": "Stochastik basierte Mathematik Spiele",
+      "url": "https://stochastosino.netlify.app/#",
+      "tag": "informatik"
     },
     {
-      "url": "https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/9acebe6b9610174b979cc5303462dd81/73790f78-a61c-451b-9a21-5cb77b830f76/index.html",
-      "page": "home",
+      "type": "website",
       "status": "test",
-      "subtitle": "(Claude Labs Test)",
+      "is_published": true,
+      "id": "aiworld",
       "title": "Ai World ",
-      "is_published": true,
-      "type": "website",
-      "tag": "informatik",
-      "id": "aiworld"
+      "subtitle": "(Claude Labs Test)",
+      "url": "https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/9acebe6b9610174b979cc5303462dd81/73790f78-a61c-451b-9a21-5cb77b830f76/index.html",
+      "tag": "informatik"
     },
     {
-      "url": "https://physikgk.netlify.app/",
-      "page": "home",
+      "type": "website",
       "status": "in_arbeit",
-      "subtitle": "Alle Themen des Physik Gk´s in der Q1",
-      "title": "Physik Q1",
       "is_published": true,
-      "type": "website",
-      "tag": "physik",
-      "id": "physik23432"
+      "id": "physik23432",
+      "title": "Physik Q1",
+      "subtitle": "Alle Themen des Physik Gk´s in der Q1",
+      "url": "https://physikgk.netlify.app/",
+      "tag": "physik"
     },
     {
-      "url": "https://newoberstufe.netlify.app/",
-      "page": "videos",
-      "status": "test",
-      "subtitle": "test",
-      "title": "NeueHomepageDesignTest1",
-      "is_published": true,
       "type": "website",
-      "tag": "informatik",
-      "id": "643"
+      "status": "test",
+      "is_published": true,
+      "id": "643",
+      "title": "NeueHomepageDesignTest1",
+      "subtitle": "test",
+      "url": "https://newoberstufe.netlify.app/",
+      "tag": "informatik"
     }
   ]
 }
