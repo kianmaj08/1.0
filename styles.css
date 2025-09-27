@@ -3175,3 +3175,166 @@ header, .navbar, .site-header {
 /* Header wirklich transparent halten */
 header { background: transparent !important; box-shadow: none !important; border-bottom-color: transparent !important; }
 html[data-theme="dark"] header { background: transparent !important; }
+
+
+/* FORCE 2-column layout for .card-grid.two-cols on >=700px */
+@media (min-width: 700px){
+  .card-grid.two-cols{
+    display:grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+}
+@media (max-width: 699.98px){
+  .card-grid.two-cols{ grid-template-columns: 1fr !important; }
+}
+
+
+
+
+/* === Global Glass UI v1 === */
+
+/* Theme-aware glass variables */
+:root{
+  --glass-bg: rgba(255,255,255,0.15);
+  --glass-border: rgba(255,255,255,0.8);
+  --glass-shadow: 0 8px 32px rgba(31,38,135,0.2), inset 0 4px 20px rgba(255,255,255,0.30);
+  --glass-radius: 20px;
+  --glass-overlay: rgba(255,255,255,0.10);
+  --glass-overlay-opacity: .6;
+}
+
+html[data-theme="dark"]{
+  --glass-bg: rgba(0,0,0,0.25);
+  --glass-border: rgba(255,255,255,0.25);
+  --glass-shadow: 0 10px 36px rgba(0,0,0,0.55), inset 0 4px 18px rgba(255,255,255,0.04);
+  --glass-overlay: rgba(255,255,255,0.05);
+}
+
+/* Base glass utility */
+.glass{
+  position: relative;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--glass-overlay);
+  border-radius: var(--glass-radius);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  box-shadow:
+    inset -10px -8px 0px -11px rgba(255,255,255,1),
+    inset 0px -9px 0px -8px rgba(255,255,255,1);
+  opacity: var(--glass-overlay-opacity);
+  z-index: -1;
+  filter: blur(1px) drop-shadow(10px 4px 6px rgba(0,0,0,.35)) brightness(1.05);
+}
+
+/* Apply glass to major UI blocks without changing HTML */
+header,
+.dropdown,
+.search,
+.search input,
+.card,
+.box,
+.btn,
+.menu-btn,
+.status,
+.qr-in-footer,
+.cta-button,
+.modal,
+.menu-stack .btn-menu,
+.topnav a,
+.to-top,
+.feedback-btn{
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+header,
+.dropdown,
+.search,
+.card,
+.box,
+.btn,
+.menu-btn,
+.status,
+.qr-in-footer,
+.cta-button,
+.modal,
+.menu-stack .btn-menu,
+.to-top,
+.feedback-btn{
+  position: relative;
+}
+header::before,
+.dropdown::before,
+.search::before,
+.card::before,
+.box::before,
+.btn::before,
+.menu-btn::before,
+.status::before,
+.qr-in-footer::before,
+.cta-button::before,
+.modal::before,
+.menu-stack .btn-menu::before,
+.to-top::before,
+.feedback-btn::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--glass-radius);
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  z-index: -1;
+}
+
+/* Keep existing card colored top stripe above the glass layer */
+.card::before{
+  z-index: 0;
+}
+.card > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* Buttons hover/focus within glass look */
+.btn:hover{
+  transform: translateY(-1px);
+}
+.btn:active{
+  transform: translateY(0);
+}
+
+/* Transparent hero and sections so background image is sichtbar */
+.hero,
+.section{
+  background: transparent !important;
+}
+
+/* Subtle borders on inputs */
+input, select, textarea{
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* Make nav bar visually floating */
+header{
+  box-shadow: none !important;
+}
