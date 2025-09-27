@@ -3366,3 +3366,6 @@ header::before,
 
 /* Fix: Dropdown/Modal Inhalte dürfen nicht zusätzlich unsichtbar überlagert werden */
 .dropdown, .modal { position: relative; z-index: 100; }
+
+/* Fix: show modal when class 'open' is added */
+.modal.open{ display:block !important; }
