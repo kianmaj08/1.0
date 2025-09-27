@@ -3426,3 +3426,124 @@ header::before, .box::before, .btn::before, .menu-btn::before, .status::before,
 .overlay-backdrop { z-index: 90; }
 .modal { z-index: 100; }
 
+
+
+
+/* ===== Glassmorphism Theme (nur per CSS) ===== */
+:root{
+  --glass-bg: rgba(255,255,255,0.15);
+  --glass-border: rgba(255,255,255,0.8);
+  --glass-overlay: rgba(255,255,255,0.10);
+  --glass-blur: 8px;
+  --glass-radius: 20px;
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.20), inset 0 4px 20px rgba(255,255,255,0.30);
+}
+html[data-theme="dark"]{
+  --glass-bg: rgba(16,18,30,0.35);
+  --glass-border: rgba(255,255,255,0.20);
+  --glass-overlay: rgba(255,255,255,0.06);
+  --glass-shadow: 0 8px 24px rgba(0,0,0,0.45), inset 0 4px 12px rgba(255,255,255,0.06);
+}
+
+/* Vorlage .glass, korrigiert (content: "" und z-index layering) */
+.glass{
+  position: relative;
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--glass-radius) !important;
+  box-shadow: var(--glass-shadow) !important;
+}
+.glass::after{
+  content: "" ;
+  position: absolute;
+  inset: 0;
+  background: var(--glass-overlay);
+  border-radius: var(--glass-radius);
+  backdrop-filter: blur(calc(var(--glass-blur) * 0.4));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 0.4));
+  box-shadow:
+    inset -10px -8px 0px -11px rgba(255,255,255,0.9),
+    inset 0px -9px 0px -8px rgba(255,255,255,0.9);
+  opacity: 0.6;
+  z-index: -1;
+  filter: brightness(115%);
+}
+
+/* Wende Glass-Style auf UI-Elemente an (ohne HTML zu ändern): */
+header,
+.header-inner,
+.search,
+.dropdown,
+.btn,
+.menu-btn,
+.card,
+.box,
+.status,
+.modal,
+.qr-in-footer,
+.cta-button,
+footer,
+.to-top,
+.feedback-btn{
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: var(--glass-radius) !important;
+  backdrop-filter: blur(var(--glass-blur)) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%) !important;
+  box-shadow: var(--glass-shadow) !important;
+  position: relative;
+}
+header{ border-bottom-color: var(--glass-border) !important; }
+header::after,
+.search::after,
+.dropdown::after,
+.btn::after,
+.menu-btn::after,
+.card::after,
+.box::after,
+.modal::after,
+.qr-in-footer::after,
+.cta-button::after,
+footer::after,
+.to-top::after,
+.feedback-btn::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--glass-overlay);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Entferne harte Card/Btn-Hintergründe aus vorherigem Design */
+.card, .btn, .box, .dropdown, .menu-btn{ background: transparent !important; }
+.card::before{ opacity:.0 !important; } /* Farbbalken oben ausblenden */
+
+/* Inputs innerhalb von Glas-Containern */
+.search input{
+  background: transparent !important;
+}
+
+/* Navigation-Underline beibehalten */
+.topnav a::after{ opacity: .9; }
+
+/* Section-Hintergründe transparenter */
+.section{ background: transparent !important; }
+
+/* 2er Grid verlässlich (wie zuvor forciert) */
+@media (min-width: 700px){
+  .card-grid.two-cols{
+    display:grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+}
+@media (max-width: 699.98px){
+  .card-grid.two-cols{ grid-template-columns: 1fr !important; }
+}
+
+/* Buttons wirken glasig, behalten aber Hover-Feedback */
+.btn:hover{ transform: translateY(-1px); }
