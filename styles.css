@@ -3151,3 +3151,27 @@ header, .navbar, .site-header {
 .cards-container .card {
   width: 100% !important;
 }
+
+
+
+/* Hero transparent, Hintergrund komplett sichtbar */
+.hero { background: transparent !important; }
+
+/* 2er Grid für Webseiten-Karten */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 700px) {
+  .card-grid.two-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.card-grid .card { width: 100%; }
+
+
+
+/* Header wirklich transparent halten */
+header { background: transparent !important; box-shadow: none !important; border-bottom-color: transparent !important; }
+html[data-theme="dark"] header { background: transparent !important; }
