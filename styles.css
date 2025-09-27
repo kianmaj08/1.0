@@ -3755,3 +3755,21 @@ html[data-theme="dark"] .box h3 {
 /* Ensure no glass ::after overlay on footer and qr container */
 footer::after, .qr-in-footer::after { content: none !important; }
 
+
+
+/* === PATCH: De-glass info/faq/qr completely (no blur, no overlays) === */
+:is(.info-section .box, .faq-list .faq-item, .qr-in-footer){
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: var(--glass-shadow) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+}
+.info-section .box::before, .info-section .box::after,
+.faq-list .faq-item::before, .faq-list .faq-item::after,
+.qr-in-footer::before, .qr-in-footer::after{
+  content: none !important;
+}
+
+/* Keep cards and header glassy, but not the info/faq/qr region */
