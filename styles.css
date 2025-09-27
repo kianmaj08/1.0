@@ -3738,3 +3738,20 @@ html[data-theme="dark"] .box h3 {
   color: #FAFAFF !important;
 }
 
+
+
+/* === PATCH: QR footer boxes must be crisp, no blur anywhere === */
+.qr-in-footer,
+.qr-in-footer * {
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.qr-in-footer img{
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Ensure no glass ::after overlay on footer and qr container */
+footer::after, .qr-in-footer::after { content: none !important; }
+
