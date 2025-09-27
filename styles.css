@@ -3132,3 +3132,22 @@ body {
 /* Fallback-Klasse, falls jemand manuell toggelt */
 .light-mode { --bg-image: url("assets/bg-light.jpg"); }
 .dark-mode  { --bg-image: url("assets/bg-dark.jpg"); }
+
+
+
+/* Header transparent */
+header, .navbar, .site-header {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 2-Spalten Grid für Karten */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.cards-container .card {
+  width: 100% !important;
+}
