@@ -16,17 +16,6 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="pageLoader" class="loader-overlay" aria-hidden="true">
-    <div class="wrapper" role="status" aria-label="Laden">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="shadow"></div>
-      <div class="shadow"></div>
-      <div class="shadow"></div>
-    </div>
-  </div>
-
 
   
   <header>
@@ -698,17 +687,6 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   input.addEventListener('input', ()=> apply(input.value));
   document.addEventListener('keydown', (e)=>{ if((e.ctrlKey||e.metaKey) && (e.key==='k'||e.key==='K')){ e.preventDefault(); input.focus(); }});
-})();
-</script>
-
-
-<script>
-// Hide loader as soon as DOM is ready; keep a fallback on window load
-(function(){
-  var hide = function(){ var el = document.getElementById('pageLoader'); if(el) el.classList.add('hidden'); };
-  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', hide); }
-  else { hide(); }
-  window.addEventListener('load', hide);
 })();
 </script>
 
