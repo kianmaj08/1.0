@@ -3791,3 +3791,26 @@ footer::after, .qr-in-footer::after { content: none !important; }
 }
 
 /* Keep cards and header glassy, but not the info/faq/qr region */
+
+
+/* === iPad/iOS: echtes "fixed" Background ohne Zoom-Bug === */
+@supports (-webkit-touch-callout: none) {
+  body{
+    position: relative !important;
+    background: none !important;
+  }
+  body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
