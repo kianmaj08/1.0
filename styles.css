@@ -3395,3 +3395,34 @@ header::before, .box::before, .btn::before, .menu-btn::before, .status::before,
   z-index: 0;
 }
 
+
+
+/* Rollback: Modals, Dropdowns und Buttons ohne Glass, damit sie zuverlässig klickbar/sichtbar sind */
+.modal, .dropdown, .btn {
+  background: var(--card) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border-radius: 12px !important;
+}
+/* Deaktiviert das Glass-Pseudo auf diesen Elementen */
+.modal::before, .dropdown::before, .btn::before { content: none !important; }
+
+/* Button-Optik wie vorher */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+/* Modal sichtbar und über dem Overlay */
+.modal.open { display: block !important; }
+.overlay-backdrop { z-index: 90; }
+.modal { z-index: 100; }
+
