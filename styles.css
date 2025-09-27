@@ -3673,3 +3673,68 @@ body {
 .light-mode { --bg-image: url("assets/bg-light.jpg") !important; }
 .dark-mode  { --bg-image: url("assets/bg-dark.jpg") !important; }
 
+
+
+/* === PATCH: 2025-09-27 – Beige raus, Dark-Headings heller, Info/FAQ/QR nicht blurry === */
+
+/* 1) "Beige" Effekte neutralisieren (Tags & Card-Bars) */
+.tag.geschichte,
+.card--geschichte::before,
+.card--brown::before {
+  background: transparent !important;
+  color: inherit !important;
+  filter: none !important;
+}
+/* Optional: neutrale Tag-Optik stattdessen */
+.tag.geschichte {
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+/* 2) Headings im Dark-Mode heller für bessere Lesbarkeit */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] .brand a,
+html[data-theme="dark"] .card h3,
+html[data-theme="dark"] .section h2 {
+  color: #F5F7FF !important;
+}
+
+/* 3) Info-Karten, FAQ und QR sollen NICHT verschwommen wirken.
+   Ursache: Die globale Glas-Regel setzte backdrop-filter & ::after-Overlay auf .box/.qr-in-footer.
+   Lösung: Für diese Bereiche Blur deaktivieren und Overlay entfernen. */
+.info-section .box,
+.faq-list .faq-item,
+.qr-in-footer {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(255,255,255,0.10) !important; /* dezente Fläche ohne Milchschleier */
+  box-shadow: var(--glass-shadow) !important;
+}
+.info-section .box::after,
+.faq-list .faq-item::after,
+.qr-in-footer::after {
+  content: none !important;
+}
+
+/* Falls frühere Regeln .box pauschal glasifiziert haben, hier gezielt rückgängig machen */
+.box.accent {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.box.accent::after { content: none !important; }
+
+/* 4) Sicherheit: kein "filter: blur(...)" auf Overlays */
+.info-section .box, .info-section .box::after,
+.faq-list .faq-item, .faq-list .faq-item::after,
+.qr-in-footer, .qr-in-footer::after {
+  filter: none !important;
+}
+
+/* 5) Titelkontrast auch in Cards erhöhen */
+html[data-theme="dark"] .card h3,
+html[data-theme="dark"] .box h3 {
+  color: #FAFAFF !important;
+}
+
