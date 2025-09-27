@@ -3338,3 +3338,31 @@ input, select, textarea{
 header{
   box-shadow: none !important;
 }
+
+
+
+/* Fix: Dark-Mode Umschaltung über data-theme */
+html[data-theme="light"] { --bg-image: url("assets/bg-light.jpg") !important; }
+html[data-theme="dark"]  { --bg-image: url("assets/bg-dark.jpg") !important; }
+
+/* Fix: Glass-Layer sollen Klicks nicht blockieren */
+.glass::after,
+header::before,
+.dropdown::before,
+.search::before,
+.card::before,
+.box::before,
+.btn::before,
+.menu-btn::before,
+.status::before,
+.qr-in-footer::before,
+.cta-button::before,
+.modal::before,
+.menu-stack .btn-menu::before,
+.to-top::before,
+.feedback-btn::before{
+  pointer-events: none !important;
+}
+
+/* Fix: Dropdown/Modal Inhalte dürfen nicht zusätzlich unsichtbar überlagert werden */
+.dropdown, .modal { position: relative; z-index: 100; }
