@@ -3898,3 +3898,25 @@ html[data-theme="dark"] .circle{ background-color:#fff; }
 .shadow:nth-child(4) { left: 45%; animation-delay: .2s }
 .shadow:nth-child(5) { left: auto; right: 15%; animation-delay: .3s; }
 
+
+
+/* === Lade-Overlay mit Blur-Effekt === */
+#loader-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, backdrop-filter 0.8s ease;
+}
+#loader-overlay.hidden {
+  opacity: 0;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  pointer-events: none;
+}
+
