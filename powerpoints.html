@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>oberstufe.site</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  
+  <header>
+    <div class="wrap">
+      <div class="left">
+        <a class="brand" href="index.html">oberstufe.site</a>
+      </div>
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav_home" class="">Home</a>
+        <a href="powerpoints.html" data-i18n="nav_pp" class="active">PowerPoints</a>
+        <a href="videos.html" data-i18n="nav_videos" class="">Videos</a>
+      </nav>
+      <div class="right"><button class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menü">
+          <span class="menu-icon" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+        </button><div class="dropdown" id="menuList" role="menu" aria-label="Menü">
+  <div class="menu-stack">
+    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalSettings">Einstellungen</a>
+    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalChangelog">Changelog</a>
+    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalLegend">Legende</a>
+    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalContact">Kontakt</a>
+    <a href="/admin" target="_blank" rel="noopener" class="btn btn-menu">Admin&nbsp;Login</a>
+  </div>
+</div></div></div></div></div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <section class="hero">
+    <div class="container">
+      <h1 data-i18n="pp_title">Willkommen bei oberstufe.site PowerPoints</h1>
+      <p data-i18n="pp_sub">Sammlung von Präsentationen, die wir im Unterricht erstellt haben.</p>
+      <div class="search-wrap">
+        <div class="search"><input id="searchInput" type="search" placeholder="Suche nach Titeln, Autor:innen oder Tags … (z. B. Physik, Erdkunde)"><span class="hint" aria-hidden="true">⌘/Ctrl+K</span></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="subject-nav">
+    <div class="subject-inner container">
+      <a class="chip chip--physik" class="chip chip--physik" class="chip chip--physik" href="#physik"><span class="tag physik">Physik</span></a>
+      <a class="chip chip--philosophie" class="chip chip--philosophie" class="chip chip--philosophie" href="#philosophie"><span class="tag philosophie">Philosophie</span></a>
+      <a class="chip chip--erdkunde" class="chip chip--erdkunde" class="chip chip--erdkunde" href="#erdkunde"><span class="tag erdkunde">Erdkunde</span></a>
+      <a class="chip chip--geschichte" class="chip chip--geschichte" class="chip chip--geschichte" href="#geschichte"><span class="tag geschichte">Geschichte</span></a>
+      <a class="chip chip--sowi" class="chip chip--sowi" class="chip chip--sowi" href="#sowi"><span class="tag sowi">SoWi</span></a>
+      <a class="chip chip--mathe" class="chip chip--mathe" class="chip chip--mathe" href="#mathe"><span class="tag">Mathe</span></a>
+      <a class="chip chip--deutsch" class="chip chip--deutsch" class="chip chip--deutsch" href="#deutsch"><span class="tag">Deutsch</span></a>
+      <a class="chip chip--sport" class="chip chip--sport" class="chip chip--sport" href="#sport"><span class="tag">Sport</span></a>
+      <a class="chip chip--chemie" class="chip chip--chemie" class="chip chip--chemie" href="#chemie"><span class="tag">Chemie</span></a>
+      <a class="chip chip--informatik" class="chip chip--informatik" class="chip chip--informatik" href="#informatik"><span class="tag">Informatik</span></a>
+    </div>
+  </nav>
+
+  <section id="physik" class="subject container">
+    <h2 data-i18n="pp_nav_physik">Physik</h2>
+<div class="card-grid two-cols" data-tag="physik"></div>
+
+    <p class="sub" data-i18n="sec_physik">Präsentationen aus dem Physikunterricht</p>
+    <div class="grid">
+      <article class="card card--physik">
+        <h3>Postulate der Physik</h3>
+        <p>Alles zu den Postulaten der Physik und mehr.</p>
+        <p class="project-note">Von Kian und Kamil.</p>
+        <div class="tags"><span class="tag physik">Physik</span></div>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/postulate-der-physik.pdf" download data-i18n="download">Download</a></div>
+        <div class="status green">Fertig</div>
+      </article>
+      <article class="card card--physik">
+        <h3>Kernkraft</h3>
+        <p>Grundlagen, Chancen und Risiken der Kernenergie.</p>
+        <p class="project-note">Von Kian und Kamil.</p>
+        <div class="tags"><span class="tag physik">Physik</span><span class="tag erdkunde">Erdkunde</span></div>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/kernkraft.pdf" download data-i18n="download">Download</a></div>
+        <div class="status green">Fertig</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="philosophie" class="subject container">
+    <h2 data-i18n="pp_nav_phil">Philosophie</h2>
+<div class="card-grid two-cols" data-tag="philosophie"></div>
+
+    <p class="sub" data-i18n="sec_phil">Philosophie-Themen und Denkmodelle</p>
+    <div class="grid">
+      <article class="card card--philosophie">
+        <h3>Utilitarismus – Squid Game</h3>
+        <p>Einführung in den Utilitarismus mit Beispiel aus Squid Game.</p>
+        <p class="project-note">Von Kian, Mark und Basit.</p>
+        <div class="tags"><span class="tag philosophie">Philosophie</span></div>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/utilitarismus-squid-game.pdf" download data-i18n="download">Download</a></div>
+        <div class="status green">Fertig</div>
+      </article>
+      <article class="card card--philosophie">
+        <h3>Buddhismus</h3>
+        <p>Grundlagen und Philosophie des Buddhismus.</p>
+        <p class="project-note">Von Kian, Mark, Basit, Kamil und Konstantin.</p>
+        <div class="tags"><span class="tag philosophie">Philosophie</span></div>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/buddhismus.pdf" download data-i18n="download">Download</a></div>
+        <div class="status green">Fertig</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="erdkunde" class="subject container">
+    <h2 data-i18n="pp_nav_geo">Erdkunde</h2>
+<div class="card-grid two-cols" data-tag="erdkunde"></div>
+
+    <p class="sub" data-i18n="sec_geo">Geographie & Umwelt</p>
+    <div class="grid">
+      <article class="card card--erdkunde">
+        <h3>Die Immerfeuchten Tropen</h3>
+        <p>Klima und Vegetation der immerfeuchten Tropen.</p>
+        <p class="project-note">Von Kian und Kamil.</p>
+        <div class="tags"><span class="tag erdkunde">Erdkunde</span></div>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/die-immerfeuchten-tropen.pdf" download data-i18n="download">Download</a></div>
+        <div class="status green">Fertig</div>
+      </article>
+      <article class="card card--erdkunde">
+        <h3>Fukushima</h3>
+        <p>Ursachen und Folgen der Reaktorkatastrophe in Fukushima.</p>
+        <p class="project-note">Von Kian und Kamil.</p>
+        <div class="tags"><span class="tag erdkunde">Erdkunde</span></div>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/fukushima.pdf" download data-i18n="download">Download</a></div>
+        <div class="status green">Fertig</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="geschichte" class="subject container">
+    <h2 data-i18n="pp_nav_hist">Geschichte</h2>
+<div class="card-grid two-cols" data-tag="geschichte"></div>
+
+    <p class="sub" data-i18n="sec_hist">Historische Themen</p>
+    <div class="grid">
+      <article class="card card--geschichte">
+        <h3>Die Französische Revolution</h3>
+        <p>Ursachen, Verlauf und Folgen der Revolution in Frankreich.</p>
+        <p class="project-note">Von Kian und Karl.</p>
+        <div class="tags"><span class="tag geschichte">Geschichte</span></div>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/die-franzosische-revolution.pdf" download data-i18n="download">Download</a></div>
+        <div class="status green">Fertig</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="sowi" class="subject container">
+    <h2 data-i18n="pp_nav_sowi">SoWi</h2>
+<div class="card-grid two-cols" data-tag="sowi"></div>
+
+    <p class="sub" data-i18n="sec_sowi">Sozialwissenschaften & Politik</p>
+    <div class="grid">
+      <article class="card card--sowi">
+        <h3>Der Indien–Pakistan-Konflikt</h3>
+        <p>Hintergründe und Verlauf des Konflikts zwischen Indien und Pakistan.</p>
+        <p class="project-note">Von Kian, Kamil und Basit.</p>
+        <div class="tags"><span class="tag sowi">SoWi</span></div>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/der-indienpakistan-konflikt.pdf" download data-i18n="download">Download</a></div>
+        <div class="status green">Fertig</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="mathe" class="subject container">
+    <h2 data-i18n="pp_nav_math">Mathe</h2>
+<div class="card-grid two-cols" data-tag="mathe"></div>
+
+    <p class="sub" data-i18n="sec_math">Mathematik – Material folgt</p>
+    <div class="grid">
+      <article class="card">
+        <h3 data-i18n="coming_title">Coming soon</h3>
+        <p data-i18n="coming_desc">Material folgt in Kürze.</p>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/mathe.pdf" style="opacity:.6; pointer-events:none;" data-i18n="download">Download</a></div>
+        <div class="status yellow">In Arbeit</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="deutsch" class="subject container">
+    <h2 data-i18n="pp_nav_de">Deutsch</h2>
+<div class="card-grid two-cols" data-tag="deutsch"></div>
+
+    <p class="sub" data-i18n="sec_de">Deutsch – Material folgt</p>
+    <div class="grid">
+      <article class="card">
+        <h3 data-i18n="coming_title">Coming soon</h3>
+        <p data-i18n="coming_desc">Material folgt in Kürze.</p>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/deutsch.pdf" style="opacity:.6; pointer-events:none;" data-i18n="download">Download</a></div>
+        <div class="status yellow">In Arbeit</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="sport" class="subject container">
+    <h2 data-i18n="pp_nav_sp">Sport</h2>
+<div class="card-grid two-cols" data-tag="sport"></div>
+
+    <p class="sub" data-i18n="sec_sp">Sport – Material folgt</p>
+    <div class="grid">
+      <article class="card">
+        <h3 data-i18n="coming_title">Coming soon</h3>
+        <p data-i18n="coming_desc">Material folgt in Kürze.</p>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/sport.pdf" style="opacity:.6; pointer-events:none;" data-i18n="download">Download</a></div>
+        <div class="status yellow">In Arbeit</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="chemie" class="subject container">
+    <h2 data-i18n="pp_nav_ch">Chemie</h2>
+<div class="card-grid two-cols" data-tag="chemie"></div>
+
+    <p class="sub" data-i18n="sec_ch">Chemie – Material folgt</p>
+    <div class="grid">
+      <article class="card">
+        <h3 data-i18n="coming_title">Coming soon</h3>
+        <p data-i18n="coming_desc">Material folgt in Kürze.</p>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/chemie.pdf" style="opacity:.6; pointer-events:none;" data-i18n="download">Download</a></div>
+        <div class="status yellow">In Arbeit</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="informatik" class="subject container">
+    <h2 data-i18n="pp_nav_inf">Informatik</h2>
+<div class="card-grid two-cols" data-tag="informatik"></div>
+
+    <p class="sub" data-i18n="sec_inf">Informatik – Material folgt</p>
+    <div class="grid">
+      <article class="card">
+        <h3 data-i18n="coming_title">Coming soon</h3>
+        <p data-i18n="coming_desc">Material folgt in Kürze.</p>
+        <div class="actions"><a target="_blank" class="ghost" href="presentations/informatik.pdf" style="opacity:.6; pointer-events:none;" data-i18n="download">Download</a></div>
+        <div class="status yellow">In Arbeit</div>
+      </article>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="cta-button" href="add-website.html" data-i18n="cta_add">Projekt hinzufügen</a>
+      <div class="footer-meta">© 2025 oberstufe.site – v2.38a</div>
+      <div class="qr-in-footer" id="qrBlock" title="QR-Code">
+        <div class="share-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l5-5 5 5"/><path d="M12 12v2.38a"/></svg>
+          <span data-i18n="share_site">Teile diese Website!</span>
+        </div>
+        <img src="qr-placeholder.jpg" alt="QR-Code">
+      </div>
+    </div>
+  </footer>
+
+  <div id="overlayGlobal" class="overlay-backdrop"></div>
+
+  <div id="modalSettings" class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <div class="modal-header">
+      <h3 id="settingsTitle" data-i18n="settings_title">Einstellungen</h3>
+      <button id="closeSettings" class="btn">Schließen</button>
+    </div>
+    <div class="modal-body">
+      <div class="row-setting">
+        <span data-i18n="set_theme">Theme</span>
+        <div class="icon-toggle" role="group" aria-label="Theme">
+          <button id="themeLight" class="icon-btn" title="Hell" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+          <button id="themeDark" class="icon-btn" title="Dunkel" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="row-setting">
+        <span data-i18n="set_lang">Sprache</span>
+        <div>
+          <button id="langDe" class="btn" style="margin-right:6px;">DE</button>
+          <button id="langEn" class="btn">EN</button>
+        </div>
+      </div>
+      </div>
+      
+      
+    </div>
+  </div>
+
+  <div id="modalChangelog" class="modal" role="dialog" aria-modal="true" aria-labelledby="changelogTitle">
+    <div class="modal-header"><h3 id="changelogTitle">Changelog</h3><button id="closeChangelog" class="btn">Schließen</button>
+<ul><li>v2.14 – Navigation verbessert, Menü überarbeitet (21.09.2025)</li><li>v2.15 – Darkmode eingeführt (21.09.2025)</li><li>v2.16 – Footer überarbeitet (21.09.2025)</li><li>v2.17 – Scroll-Up Button eingefügt (21.09.2025)</li><li>v2.18 – Header/Navi Bugfixes (21.09.2025)</li><li>v2.19 – Design-Optimierungen, Animationen (21.09.2025)</li><li>v2.20 – Farbpalette angepasst (21.09.2025)</li><li>v2.21 – Changelog hinzugefügt (21.09.2025)</li><li>v2.22 – Kleine Layout-Fixes (21.09.2025)</li><li>v2.23 – Neue Version bereitgestellt (21.09.2025)</li><li>v2.24 – Bugfix Scroll-Up Button (21.09.2025)</li><li>v2.25 – Feedback Button hinzugefügt (21.09.2025)</li><li>v2.26 – Korrektur Scroll-Button Verhalten (21.09.2025)</li><li>v2.27 – Chips Design begonnen (21.09.2025)</li><li>v2.28 – Chips farbig (erste Version) (21.09.2025)</li><li>v2.29 – Chips Bugfix (korrekte Farben) (21.09.2025)</li><li>v2.30 – Chips Variante A umgesetzt (21.09.2025)</li><li>v2.31 – Chips Farben in allen Fächern gefixt (21.09.2025)</li><li>v2.32 – Dark Mode Kontrast & Elemente verbessert (21.09.2025)</li><li>v2.33 – Dark Mode Navy + Beige Akzente (21.09.2025)</li><li>v2.34 – Dark Mode Palette #222831/#393E46/#948979/#DFD0B8 (21.09.2025)</li><li>v2.35 – Dark Mode: Titel Anthrazit (21.09.2025)</li><li>v2.36 – Interne Robustheit verbessert (21.09.2025)</li><li>v2.37 – Listener/JS-Struktur bereinigt (21.09.2025)</li><li>v2.38 – Finales Update vor 2.38a Release (21.09.2025)</li></ul>
+</div>
+    <div class="modal-body">
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v1.0 – 18.09.2025</span> · Erste Veröffentlichung der Homepage</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#22C55E;">Erweiterungen – 18.09.2025</span> · Philexikon & Pieter Bruegel integriert</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.0 – 18.09.2025</span> · Überarbeitetes Design</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.1 – 18.09.2025</span> · Feinschliff</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.2 – 19.09.2025</span> · Wiener Kongress, Suche & Tags</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.4 – 20.09.2025</span> · QR im Footer, CTA, Design-Fixes</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#6B7280;">v2.6 – 20.09.2025</span> · Farben wie 12.4, FAQ-Akzente, Menü-Align Fix</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#22C55E;">v2.7 – 20.09.2025</span> · PowerPoints & Videos, Share-Hinweis, Header-Navigation</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#22C55E;">v2.7e – 20.09.2025</span> · Komplettpaket (alle Unterseiten), PPT-Downloads vorbereitet</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.8 – 20.09.2025</span> · Fächer-Abschnitte (PP), DE/EN, QR-Option, „Unsere Websites“</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#22C55E;">v2.8a – 20.09.2025</span> · PP-Chips als Tags, Add-Seite 3 Spalten</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#6B7280;">v2.8b – 20.09.2025</span> · Bugfix: getrennte Seiten, saubere Header/Footer</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#6B7280;">v2.8c – 20.09.2025</span> · Bugfix: kein Zusammenkleben der Seiten</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#6B7280;">v2.8d – 20.09.2025</span> · Einstellungen repariert, Chips hübscher, CTA auf Add-Seite ausgeblendet</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.9 – 20.09.2025</span> · Changelog-Overlay, Dark Mode verbessert, Chips Variante A, Legende & Sprache gefixt</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.10 – 20.09.2025</span> · Hamburger-Icon (3 Striche) & Bugfixes; neue Fachfarben</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.11 – 20.09.2025</span> · Menü-Overlays (Kontakt/Changelog/Legende/Einstellungen), Theme-Switch mit SVG-Sonne/Mond, vollständige DE/EN, Fachfarben fix</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="modalLegend" class="modal" role="dialog" aria-modal="true" aria-labelledby="legendTitle">
+    <div class="modal-header"><h3 id="legendTitle">Legende</h3><button id="closeLegend" class="btn">Schließen</button></div>
+    <div class="modal-body">
+      <h4 style="margin:10px 0 6px">Tags</h4>
+      <p>Farbige Schlagworte geben die Fachbereiche an:</p>
+      <div class="legend-tags">
+<span class="tag chemie">Chemie</span>
+        <span class="tag deutsch">Deutsch</span>
+        <span class="tag erdkunde">Erdkunde</span>
+        <span class="tag geschichte">Geschichte</span>
+        <span class="tag informatik">Informatik</span>
+        <span class="tag kunst">Kunst</span>
+        <span class="tag mathe">Mathe</span>
+        <span class="tag physik">Physik</span>
+        <span class="tag philosophie">Philosophie</span>
+        <span class="tag sowi">SoWi</span>
+        <span class="tag sport">Sport</span>
+</div>
+
+      <h4 style="margin:16px 0 6px">Status‑Badges</h4>
+      <p>Zeigen den aktuellen Stand eines Projekts:</p>
+      <div class="legend-status">
+        <span class="status green">Fertig</span>
+        <span class="status yellow">In Arbeit</span>
+        <span class="status red">Test</span>
+        <span class="status blue">Coming&nbsp;Soon</span>
+</div>
+      <ul class="legend-list">
+  <ul class="status-list">
+    <li class="status-item"><span class="status green">Fertig</span><span class="name">Fertig</span><span class="desc">Projekt/Präsentation ist abgeschlossen.</span></li>
+    <li class="status-item"><span class="status yellow">In Arbeit</span><span class="name">In Arbeit</span><span class="desc">Inhalte werden noch erstellt oder überarbeitet.</span></li>
+    <li class="status-item"><span class="status red">Test</span><span class="name">Test</span><span class="desc">Entwurf oder Beta; kann Fehler enthalten.</span></li>
+    <li class="status-item"><span class="status blue">Coming Soon</span><span class="name">Coming Soon</span><span class="desc">Geplant, aber noch nicht veröffentlicht.</span></li>
+  </ul>
+</ul>
+
+    </div>
+    </div>
+  </div>
+
+  <div id="modalContact" class="modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-header"><h3 id="contactTitle" data-i18n="contact_title">Kontakt</h3><button id="closeContact" class="btn">Schließen</button></div>
+    <div class="modal-body">
+      <p><strong>E-Mail:</strong> <a href="mailto:oberstufesite@gmail.com" class="link">oberstufesite@gmail.com</a></p>
+      <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc7hitAkvgDHXnOKgRpvolibMhm3iHeag_V-Azm4Mz8zef63w/viewform?usp=dialog" target="_blank" rel="noopener" data-i18n="contact_form">Zum Feedback-Formular</a></p>
+    </div>
+  </div>
+
+  <a class="feedback-btn" id="feedbackBtn" href="https://docs.google.com/forms/d/e/1FAIpQLSc7hitAkvgDHXnOKgRpvolibMhm3iHeag_V-Azm4Mz8zef63w/viewform?usp=dialog" target="_blank" rel="noopener" data-i18n="feedback">Feedback</a>
+  <button class="to-top" id="toTopBtn" aria-label="Nach oben scrollen" title="Nach oben"><svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="rgba(255,255,255,.65)" stroke-width="2"/><path d="M16 26l8-8 8 8" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+
+
+<script>
+/* v2.17 theme js */
+(function(){
+  const themeLight=document.getElementById('themeLight');
+  const themeDark=document.getElementById('themeDark');
+  function setTheme(next){
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next);}catch(e){}
+    if(themeLight) themeLight.classList.toggle('active', next==='light');
+    if(themeDark) themeDark.classList.toggle('active', next==='dark');
+  }
+  const saved=localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+  setTheme(saved);
+  themeLight && themeLight.addEventListener('click', ()=> setTheme('light'));
+  themeDark && themeDark.addEventListener('click', ()=> setTheme('dark'));
+})();
+</script>
+
+
+
+
+<script>
+/* v2.26 unified scroll visibility */
+(function(){
+  const toTopBtn = document.getElementById('toTopBtn');
+  const feedbackBtn = document.getElementById('feedbackBtn');
+  function sync(){
+    const y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const show = y > 160;
+    if(toTopBtn) toTopBtn.classList.toggle('show', show);
+    if(feedbackBtn) feedbackBtn.classList.toggle('show', show);
+  }
+  window.addEventListener('scroll', sync, {passive:true});
+  sync();
+  if(toTopBtn){
+    toTopBtn.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+
+
+<script>
+/* v2.37 – Language listeners harden */
+(function(){
+  function safeApply(lang){
+    if (typeof applyI18N === 'function') { applyI18N(lang); }
+  }
+  var langDeBtn = document.getElementById('langDe');
+  var langEnBtn = document.getElementById('langEn');
+  if(langDeBtn){ langDeBtn.onclick = function(){ safeApply('de'); }; }
+  if(langEnBtn){ langEnBtn.onclick = function(){ safeApply('en'); }; }
+})();
+</script>
+
+
+<script>
+// v2.41a helpers
+(function(){
+  // Title anthracite on index & 200
+  try{
+    var h1 = document.querySelector('h1');
+    if(h1 && /Willkommen auf oberstufe\.site/i.test(h1.textContent)){
+      h1.classList.add('site-title','title-anthrazit');
+    }
+  }catch(e){}
+
+  // Mark feedback card to color links blue
+  try{
+    document.querySelectorAll('.card, section, div').forEach(function(el){
+      if(/Kann ich Feedback geben oder Ideen einreichen\?/i.test(el.textContent)){
+        // add class to closest card-like container
+        var target = el.closest('.card') || el;
+        target.classList.add('feedback-card');
+      }
+    });
+  }catch(e){}
+})();
+</script>
+
+
+<!-- Netlify Identity (login status only) -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+
+
+<div id="cardsPresGrid" class="card-grid two-cols"></div>
+
+<script>
+(async function(){
+  try{
+    const res = await fetch('/data/cards.json', {cache:'no-cache'});
+    const data = await res.json();
+    const list = (data.cards||[]).filter(c => (c.is_published !== false) && (c.type === 'presentation'));
+    const el = document.getElementById('cardsPresGrid');
+    if(!el) return;
+    el.innerHTML = list.map(c => `
+      <a class="card card--${c.tag||'default'}" href="${c.url}" target="_blank" rel="noopener">
+        ${c.image_url ? `<img class="card-thumb" src="${c.image_url}" alt="">` : ''}
+        <h3>${c.title}</h3>
+        ${c.subtitle ? `<p class="muted">${c.subtitle}</p>` : ''}
+        <div class="meta"><span class="tag ${c.tag||''}">${c.tag||''}</span><span class="type">${c.type||''}</span></div>
+      </a>
+    `).join('');
+  }catch(e){ console.error('cards load error', e); }
+})();
+</script>
+
+
+
+
+
+
+
+<script>
+(function(){
+  function badgeHTML(status){
+    const m={ fertig:['Fertig','badge-done'], in_arbeit:['In Arbeit','badge-wip'], test:['Test','badge-test'], coming_soon:['Coming Soon','badge-soon'] };
+    const x=m[status]; return x?`<span class="badge ${x[1]}">${x[0]}</span>`:'';
+  }
+  function tagPill(tag){
+    if(!tag) return '';
+    const label = (tag==='sowi'?'SoWi':tag.charAt(0).toUpperCase()+tag.slice(1));
+    return `<span class="pill-tag tag-${tag}">${label}</span>`;
+  }
+  function cardHTML(c){
+    const tag=(c.tag||'').toLowerCase();
+    return `<div class="card card--${tag}">
+      ${c.image_url?`<img class="card-thumb" src="${c.image_url}" alt="">`:''}
+      <h3>${c.title||''}</h3>
+      ${c.subtitle?`<p class="muted">${c.subtitle}</p>`:''}
+      <div class="row-tags"><div class="left">${tagPill(tag)}</div><div class="right"></div></div>
+      <div class="actions"><a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a></div>
+    </div>`;
+  }
+  async function loadCards(){
+    const r=await fetch('/data/cards.json',{cache:'no-cache'});
+    const d=await r.json(); return (d.cards||[]).filter(c=>c.is_published!==false);
+  }
+  function renderWebsites(cards){
+    const grid=document.getElementById('websitesGrid'); if(!grid) return;
+    const webs=cards.filter(c=>(c.type||'')==='website');
+    grid.innerHTML = webs.map(cardHTML).join('');
+  }
+  function renderPresentations(cards){
+    const pres=cards.filter(c=>(c.type||'')==='presentation');
+    document.querySelectorAll('[data-tag]').forEach(grid=>{
+      const tag=(grid.getAttribute('data-tag')||'').toLowerCase();
+      const items=pres.filter(c=>(c.tag||'').toLowerCase()===tag);
+      grid.innerHTML = items.map(cardHTML).join('');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', async ()=>{
+    const cards=await loadCards();
+    if(/powerpoints/i.test(location.pathname)) renderPresentations(cards);
+    else renderWebsites(cards);
+  });
+})();
+</script>
+
+
+
+
+<script>
+// v2.70 Menu + Modals + Theme
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  const overlay = document.getElementById('overlayGlobal');
+
+  function openMenu(){ if(list){ list.classList.add('open'); } if(btn){ btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); } }
+  function closeMenu(){ if(list){ list.classList.remove('open'); } if(btn){ btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } }
+
+  btn && btn.addEventListener('click', (e)=>{ e.stopPropagation(); list && (list.classList.contains('open')?closeMenu():openMenu()); });
+
+  document.addEventListener('click', (e)=>{
+    if(list && !list.contains(e.target) && !btn.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeMenu(); closeAllModals(); }});
+
+  // Modals
+  const modals = Array.from(document.querySelectorAll('.modal'));
+  function closeAllModals(){ modals.forEach(m=>m.classList.remove('open')); overlay && overlay.classList.remove('show'); }
+  function openModal(id){ closeMenu(); const m=document.getElementById(id); if(m){ m.classList.add('open'); overlay && overlay.classList.add('show'); } }
+
+  document.querySelectorAll('#menuList [data-modal]').forEach(el=>{
+    el.addEventListener('click', ()=> openModal(el.getAttribute('data-modal')));
+  });
+  overlay && overlay.addEventListener('click', closeAllModals);
+  document.querySelectorAll('[data-close]').forEach(x=> x.addEventListener('click', closeAllModals));
+
+  // Theme
+  function setTheme(next){
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next);}catch(e){}
+    const tL=document.getElementById('themeLight'); const tD=document.getElementById('themeDark');
+    tL && tL.classList.toggle('active', next==='light');
+    tD && tD.classList.toggle('active', next==='dark');
+  }
+  const saved = (function(){
+    try{ return localStorage.getItem('theme'); }catch(e){ return null; }
+  })() || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+  setTheme(saved);
+
+  const tL=document.getElementById('themeLight'); const tD=document.getElementById('themeDark');
+  tL && tL.addEventListener('click', ()=> setTheme('light'));
+  tD && tD.addEventListener('click', ()=> setTheme('dark'));
+})();
+</script>
+
+<script>
+// v2.61 – Client-side search minimal (no counter, no layout shift)
+(function(){
+  const input = document.getElementById('searchInput');
+  if(!input) return;
+  function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+  function items(){ return Array.from(document.querySelectorAll('.card')); }
+  function matches(el, q){
+    if(!q) return true;
+    const hay = norm(el.textContent);
+    const tags = (el.getAttribute('data-tags')||'') + ' ' + (el.getAttribute('data-tag')||'');
+    return hay.includes(q) || norm(tags).includes(q);
+  }
+  function apply(q){
+    const qn = norm(q);
+    items().forEach(el=>{ el.style.display = matches(el, qn) ? '' : 'none'; });
+  }
+  input.addEventListener('input', ()=> apply(input.value));
+  document.addEventListener('keydown', (e)=>{ if((e.ctrlKey||e.metaKey) && (e.key==='k'||e.key==='K')){ e.preventDefault(); input.focus(); }});
+})();
+</script>
+
+</body>
+</html>
