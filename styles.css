@@ -3646,3 +3646,30 @@ footer::after,
   grid-column: auto !important;
 }
 
+
+
+/* === PATCH: Reliable Light/Dark background images === */
+/* Default = Light */
+:root { --bg-image: url("assets/bg-light.jpg") !important; }
+html[data-theme="light"] { --bg-image: url("assets/bg-light.jpg") !important; }
+/* Explicit Dark (matches Theme-Toggle) */
+html[data-theme="dark"] { --bg-image: url("assets/bg-dark.jpg") !important; }
+/* System preference as fallback if kein data-theme gesetzt ist */
+@media (prefers-color-scheme: dark) {
+  :root { --bg-image: url("assets/bg-dark.jpg") !important; }
+}
+
+/* Make sure the background image always wins over older background rules */
+html, body { height: 100%; }
+body {
+  background-image: var(--bg-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Optional manual toggle support (falls per Klasse gewechselt wird) */
+.light-mode { --bg-image: url("assets/bg-light.jpg") !important; }
+.dark-mode  { --bg-image: url("assets/bg-dark.jpg") !important; }
+
