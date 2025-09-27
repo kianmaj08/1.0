@@ -3814,3 +3814,34 @@ footer::after, .qr-in-footer::after { content: none !important; }
   }
 }
 
+
+
+/* === PATCH: Fix Feedback-/To-Top-Buttons (Hit-Test & Layering) === */
+/* Buttons klar über allen Overlays halten und klickbar machen */
+.to-top,
+.feedback-btn{
+  position: fixed !important;
+  z-index: 300 !important; /* über Glas-Layern & Modals */
+}
+
+/* Pseudo-Overlays der Glasoptik sollen Klicks NICHT abfangen */
+.to-top::before, .to-top::after,
+.feedback-btn::before, .feedback-btn::after{
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+/* Zusätzliche iOS-Safari Stabilisierung: kein Blur auf den Buttons */
+@supports (-webkit-touch-callout: none) {
+  .to-top, .feedback-btn{
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* Sicherheitsnetz: globale Glas-Overlays auf Buttons dürfen nie über Content liegen */
+header::before, .dropdown::before, .search::before, .card::before, .box::before,
+.status::before, .modal::before, .qr-in-footer::before, .cta-button::before, footer::before{
+  z-index: -1 !important;
+}
+
