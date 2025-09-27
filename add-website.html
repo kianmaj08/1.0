@@ -16,6 +16,17 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="pageLoader" class="loader-overlay" aria-hidden="true">
+    <div class="wrapper" role="status" aria-label="Laden">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+
 
   
   <header>
@@ -662,5 +673,16 @@ document.addEventListener('DOMContentLoaded', function(){
   tD && tD.addEventListener('click', ()=> setTheme('dark'));
 })();
 </script>
+
+<script>
+// Hide loader as soon as DOM is ready; keep a fallback on window load
+(function(){
+  var hide = function(){ var el = document.getElementById('pageLoader'); if(el) el.classList.add('hidden'); };
+  if(document.readyState === 'loading'){ document.addEventListener('DOMContentLoaded', hide); }
+  else { hide(); }
+  window.addEventListener('load', hide);
+})();
+</script>
+
 </body>
 </html>
