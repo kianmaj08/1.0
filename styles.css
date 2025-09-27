@@ -3601,3 +3601,48 @@ footer::after,
 @media (max-width: 699.98px){
   .card-grid.two-cols{ grid-template-columns: 1fr !important; }
 }
+
+
+/* === PATCH 2er-Grid Fix === */
+@media (min-width: 700px){
+  .card-grid.two-cols{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+}
+@media (max-width: 699.98px){
+  .card-grid.two-cols{ grid-template-columns: 1fr !important; }
+}
+.card-grid.two-cols > .card{
+  grid-column: auto !important;
+}
+
+
+/* === FINAL 2er Grid Fix === */
+
+@media (min-width: 700px){
+  .card-grid.two-cols{
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+}
+@media (max-width: 699.98px){
+  .card-grid.two-cols{ grid-template-columns: 1fr !important; }
+}
+.card-grid.two-cols > .card{
+  grid-column: auto !important;
+}
+
+
+/* === FORCE ALWAYS TWO COLUMNS (no breakpoints) === */
+.card-grid.two-cols{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+.card-grid.two-cols > .card{
+  grid-column: auto !important;
+}
+
