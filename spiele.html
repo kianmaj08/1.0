@@ -31,7 +31,10 @@
         <a href="spiele.html" data-i18n="nav_games" class="active">Spiele</a>
       </nav>
       <div class="right">
-</div><!-- Staggered Menu with Uiverse Burger + Inline Settings -->
+</div></div></div></div></div>
+      </div>
+    </div>
+  <!-- Staggered Menu with Uiverse Burger + Inline Settings -->
 <div class="sm-wrap">
   <div class="sm-header-btn">
     <!-- From Uiverse.io by Cevorob -->
@@ -323,7 +326,52 @@
 
 
 
+<script>
+// v2.70 Menu + Modals + Theme
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  const overlay = document.getElementById('overlayGlobal');
 
+  function openMenu(){ if(list){ list.classList.add('open'); } if(btn){ btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); } }
+  function closeMenu(){ if(list){ list.classList.remove('open'); } if(btn){ btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } }
+
+  btn && btn.addEventListener('click', (e)=>{ e.stopPropagation(); list && (list.classList.contains('open')?closeMenu():openMenu()); });
+
+  document.addEventListener('click', (e)=>{
+    if(list && !list.contains(e.target) && !btn.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeMenu(); closeAllModals(); }});
+
+  // Modals
+  const modals = Array.from(document.querySelectorAll('.modal'));
+  function closeAllModals(){ modals.forEach(m=>m.classList.remove('open')); overlay && overlay.classList.remove('show'); }
+  function openModal(id){ closeMenu(); const m=document.getElementById(id); if(m){ m.classList.add('open'); overlay && overlay.classList.add('show'); } }
+
+  document.querySelectorAll('#menuList [data-modal]').forEach(el=>{
+    el.addEventListener('click', ()=> openModal(el.getAttribute('data-modal')));
+  });
+  overlay && overlay.addEventListener('click', closeAllModals);
+  document.querySelectorAll('[data-close]').forEach(x=> x.addEventListener('click', closeAllModals));
+
+  // Theme
+  function setTheme(next){
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next);}catch(e){}
+    const tL=document.getElementById('themeLight'); const tD=document.getElementById('themeDark');
+    tL && tL.classList.toggle('active', next==='light');
+    tD && tD.classList.toggle('active', next==='dark');
+  }
+  const saved = (function(){
+    try{ return localStorage.getItem('theme'); }catch(e){ return null; }
+  })() || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+  setTheme(saved);
+
+  const tL=document.getElementById('themeLight'); const tD=document.getElementById('themeDark');
+  tL && tL.addEventListener('click', ()=> setTheme('light'));
+  tD && tD.addEventListener('click', ()=> setTheme('dark'));
+})();
+</script>
 
 <script>
 // v2.61 – Client-side search minimal (no counter, no layout shift)
@@ -386,6 +434,6 @@
 })();
 </script>
 
-  
+  <script src="assets/staggered-menu.js"></script>
 </body>
 </html>

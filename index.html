@@ -446,21 +446,191 @@ function badgeHTML(status){
 </script>
 
 
+<script>
+
+<script>
 
 
 
 
+<script>
+// v2.52 – menu toggle (no overlay), modals use overlay
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  const overlay = document.getElementById('overlayGlobal');
+  if(!btn || !list) return;
+
+  function openMenu(){
+    list.classList.add('open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  function closeMenu(){
+    list.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  function toggleMenu(){ list.classList.contains('open') ? closeMenu() : openMenu(); }
+
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggleMenu(); });
+  document.addEventListener('click', (e)=>{
+    if(!list.contains(e.target) && !btn.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
+
+  // Modal helpers use overlay
+  const hook=(id, fn)=>{ const el=document.getElementById(id); if(el) el.addEventListener('click', fn); };
+  const openModal=(id)=>{ const m=document.getElementById(id); if(m){ m.classList.add('open'); overlay && overlay.classList.add('show'); closeMenu(); } };
+  const closeModal=(id)=>{ const m=document.getElementById(id); if(m){ m.classList.remove('open'); overlay && overlay.classList.remove('show'); } };
+
+  hook('menuOpenSettings', ()=> openModal('modalSettings'));
+  hook('menuOpenChangelog', ()=> openModal('modalChangelog'));
+  hook('menuOpenLegend',   ()=> openModal('modalLegend'));
+  hook('menuOpenContact',  ()=> openModal('modalContact'));
+
+  hook('closeSettings', ()=> closeModal('modalSettings'));
+  hook('closeChangelog', ()=> closeModal('modalChangelog'));
+  hook('closeLegend', ()=> closeModal('modalLegend'));
+  hook('closeContact', ()=> closeModal('modalContact'));
+
+  overlay && overlay.addEventListener('click', ()=>{
+    closeModal('modalSettings'); closeModal('modalChangelog'); closeModal('modalLegend'); closeModal('modalContact');
+  });
+})();
+</script>
+
+
+<script>
+// v2.56 – minimal toggle fallback
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  if(!btn || !list) return;
+  const open = ()=>{ list.classList.add('open'); btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); };
+  const close = ()=>{ list.classList.remove('open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); };
+  const toggle = ()=> list.classList.contains('open') ? close() : open();
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(); });
+  document.addEventListener('click', (e)=>{ if(!list.contains(e.target) && !btn.contains(e.target)) close(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+})();
+</script>
+
+
+<script>
+// v2.58 – global modal open/close fallback
+(function(){
+  if(!window._openModal){
+    window._openModal = function(id){
+      var m=document.getElementById(id);
+      var overlay=document.getElementById('overlayGlobal');
+      if(m){ m.classList.add('open'); }
+      if(overlay){ overlay.classList.add('show'); }
+      var btn=document.getElementById('menuBtn'); var list=document.getElementById('menuList');
+      if(list && list.classList.contains('open')){ list.classList.remove('open'); btn && btn.classList.remove('open'); }
+    };
+  }
+  if(!window._closeModal){
+    window._closeModal = function(id){
+      var m=document.getElementById(id);
+      var overlay=document.getElementById('overlayGlobal');
+      if(m){ m.classList.remove('open'); }
+      if(overlay){ overlay.classList.remove('show'); }
+    };
+  }
+})();
+</script>
+
+
+<script>
+/* v2.59 – Hamburger Menü (neu codiert) */
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  const overlay = document.getElementById('overlayGlobal');
+  if(!btn || !list) return;
+
+  function openMenu(){
+    list.classList.add('open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  function closeMenu(){
+    list.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  function toggleMenu(){ list.classList.contains('open') ? closeMenu() : openMenu(); }
+
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggleMenu(); });
+  document.addEventListener('click', (e)=>{ if(!list.contains(e.target) && !btn.contains(e.target)) closeMenu(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
+
+  function openModalById(id){
+    const m = document.getElementById(id);
+    if(!m) return;
+    m.classList.add('open');
+    if(overlay) overlay.classList.add('show');
+    closeMenu();
+  }
+
+  list.querySelectorAll('[data-modal]').forEach(a=>{
+    a.addEventListener('click', (e)=>{ e.preventDefault(); openModalById(a.getAttribute('data-modal')); });
+  });
+
+  window._openModal = window._openModal || openModalById;
+})();
+</script>
 
 
 
 
+<script>
+// v2.70 Menu + Modals + Theme
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  const overlay = document.getElementById('overlayGlobal');
 
+  function openMenu(){ if(list){ list.classList.add('open'); } if(btn){ btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); } }
+  function closeMenu(){ if(list){ list.classList.remove('open'); } if(btn){ btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } }
 
+  btn && btn.addEventListener('click', (e)=>{ e.stopPropagation(); list && (list.classList.contains('open')?closeMenu():openMenu()); });
 
+  document.addEventListener('click', (e)=>{
+    if(list && !list.contains(e.target) && !btn.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeMenu(); closeAllModals(); }});
 
+  // Modals
+  const modals = Array.from(document.querySelectorAll('.modal'));
+  function closeAllModals(){ modals.forEach(m=>m.classList.remove('open')); overlay && overlay.classList.remove('show'); }
+  function openModal(id){ closeMenu(); const m=document.getElementById(id); if(m){ m.classList.add('open'); overlay && overlay.classList.add('show'); } }
 
+  document.querySelectorAll('#menuList [data-modal]').forEach(el=>{
+    el.addEventListener('click', ()=> openModal(el.getAttribute('data-modal')));
+  });
+  overlay && overlay.addEventListener('click', closeAllModals);
+  document.querySelectorAll('[data-close]').forEach(x=> x.addEventListener('click', closeAllModals));
 
+  // Theme
+  function setTheme(next){
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next);}catch(e){}
+    const tL=document.getElementById('themeLight'); const tD=document.getElementById('themeDark');
+    tL && tL.classList.toggle('active', next==='light');
+    tD && tD.classList.toggle('active', next==='dark');
+  }
+  const saved = (function(){
+    try{ return localStorage.getItem('theme'); }catch(e){ return null; }
+  })() || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+  setTheme(saved);
 
+  const tL=document.getElementById('themeLight'); const tD=document.getElementById('themeDark');
+  tL && tL.addEventListener('click', ()=> setTheme('light'));
+  tD && tD.addEventListener('click', ()=> setTheme('dark'));
+})();
+</script>
 
 <script>
 // v2.61 – Client-side search minimal (no counter, no layout shift)
@@ -484,7 +654,7 @@ function badgeHTML(status){
 })();
 </script>
 
-  
+  <script src="assets/staggered-menu.js"></script>
 </body>
 </html>
 </script></script>
