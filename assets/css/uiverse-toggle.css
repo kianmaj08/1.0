@@ -1,0 +1,28 @@
+/* UIverse Light/Dark Toggle (modal-friendly) */
+.settings-theme-toggle {
+  margin: 1rem 0 0.5rem 0;
+}
+.settings-theme-toggle .app { background: transparent; }
+.settings-theme-toggle .content { transform: none; margin: 0 auto; width: 100%; max-width: 320px; }
+.settings-theme-toggle .phone { width: 100%; height: auto; background: transparent; box-shadow: none; }
+.settings-theme-toggle label, .settings-theme-toggle .toggle { height: 2.4rem; border-radius: 999px; }
+.settings-theme-toggle label { background: rgba(0,0,0,.12); margin: 1rem 0; }
+.settings-theme-toggle .toggle { width: 50%; background: var(--card-bg, #fff); box-shadow: 0 2px 12px rgba(0,0,0,.12); }
+.settings-theme-toggle .names { font-size: .9rem; font-weight: 700; color: var(--text, #111); }
+.settings-theme-toggle .circle { width: 6rem; height: 6rem; }
+.settings-theme-toggle .crescent { width: 4.5rem; height: 4.5rem; }
+
+/* Base styles from component */
+.settings-theme-toggle .content { display: flex; flex-direction: column; text-align: center; }
+.settings-theme-toggle .circle { position: relative; border-radius: 50%; background: linear-gradient(40deg, #FF0080,#FF8C00 70%); margin: 0.5rem auto; }
+.settings-theme-toggle .crescent { position: absolute; border-radius: 50%; right: 0; background: white; transform: scale(0); transform-origin: top right; transition: transform .6s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.settings-theme-toggle .names { width: 65%; margin-left: 17.5%; margin-top: 0.35rem; position: absolute; display: flex; justify-content: space-between; user-select: none; }
+.settings-theme-toggle .dark { opacity: .5; }
+
+.settings-theme-toggle [type="checkbox"] { display: none; }
+.settings-theme-toggle [type="checkbox"]:checked + .app .toggle { transform: translateX(100%); background-color: #34323D; }
+.settings-theme-toggle [type="checkbox"]:checked + .app .dark { opacity: 1; color: white; }
+.settings-theme-toggle [type="checkbox"]:checked + .app .light { opacity: 1; color: white; }
+.settings-theme-toggle [type="checkbox"]:checked + .app .crescent { transform: scale(1); background: #26242E; }
+.settings-theme-toggle [type="checkbox"]:checked + .app .circle { background: linear-gradient(40deg, #8983F7, #A3DAFB 70%); }
