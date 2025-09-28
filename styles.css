@@ -3845,3 +3845,23 @@ header::before, .dropdown::before, .search::before, .card::before, .box::before,
   z-index: -1 !important;
 }
 
+
+
+/* === Fixed Glass Header Override === */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body {
+  --header-offset: 76px;
+  padding-top: var(--header-offset);
+}
+
