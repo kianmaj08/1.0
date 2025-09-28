@@ -48,14 +48,17 @@
 </div></div></div></div></div>
       </div>
     </div>
-  <!-- Staggered Menu (vanilla) -->
+  <!-- Staggered Menu with Uiverse Burger + Inline Settings -->
 <div class="sm-wrap">
-  <button class="sm-toggle" aria-label="Menü öffnen/schließen" type="button">
-    <span class="sm-icon">
-      <span class="sm-icon-line h"></span>
-      <span class="sm-icon-line v"></span>
-    </span>
-  </button>
+  <div class="sm-header-btn">
+    <!-- From Uiverse.io by Cevorob -->
+    <label class="burger" for="burger" aria-label="Menü öffnen/schließen">
+      <input type="checkbox" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
 
   <div class="sm-layers">
     <div class="sm-layer"></div>
@@ -68,10 +71,19 @@
     </div>
     <ul class="sm-list" data-numbering="true">
       <li class="sm-item"><a class="sm-link" data-idx="01" href="index.html" aria-label="Zur Startseite">Home</a></li>
-      <li class="sm-item"><a class="sm-link" data-idx="02" href="settings.html" aria-label="Zu den Einstellungen">Einstellungen</a></li>
-      <li class="sm-item"><a class="sm-link" data-idx="03" href="admin/index.html" aria-label="Zum Admin-Login">Projekte</a></li>
-      <li class="sm-item"><a class="sm-link" data-idx="04" href="contact.html" aria-label="Kontakt - Coming soon">Kontakt</a></li>
+      <li class="sm-item"><a class="sm-link" data-idx="02" href="#" data-inline="settings" aria-label="Einstellungen umschalten">Einstellungen</a></li>
+      <li class="sm-item"><a class="sm-link" data-idx="03" href="admin/index.html" aria-label="Zum Admin-Login">Admin Login</a></li>
+      <li class="sm-item"><a class="sm-link" data-idx="04" href="#" aria-disabled="true">Coming Soon</a></li>
     </ul>
+
+    <div class="sm-settings" data-open="false" aria-label="Einstellungen">
+      <h3>Darstellung</h3>
+      <div class="sm-setting-row">
+        <input id="sm-theme-switch" class="sm-switch" type="checkbox" />
+        <label for="sm-theme-switch" class="sm-setting-label">Dark&nbsp;Mode</label>
+      </div>
+    </div>
+
     <div class="sm-socials">
       <a href="mailto:info@oberstufe.site" aria-label="Schreibe uns per Gmail">Gmail</a>
       <a href="https://docs.google.com" target="_blank" rel="noopener" aria-label="Öffne Google Docs">Google Docs</a>
@@ -79,7 +91,6 @@
   </aside>
 </div>
 <!-- /Staggered Menu -->
-
 </header>
 
 
