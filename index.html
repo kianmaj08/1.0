@@ -19,6 +19,7 @@
 
 
 <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/staggered-menu.css">
 </head>
 <body>
 
@@ -30,13 +31,11 @@
       </div>
       <nav class="nav">
         <a href="index.html" data-i18n="nav_home" class="active">Home</a>
-        <a href="powerpoints.html" data-i18n="nav_pp">PowerPoints</a>
-        <a href="videos.html" data-i18n="nav_videos">Videos</a>
-        <a href="spiele.html" data-i18n="nav_games">Spiele</a>
+        <a href="powerpoints.html" data-i18n="nav_pp" class="">PowerPoints</a>
+        <a href="videos.html" data-i18n="nav_videos" class="">Videos</a>
+              <a href="spiele.html" data-i18n="nav_games" class="">Spiele</a>
       </nav>
-      <div class="right"><button class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menü">
-          <span class="menu-icon" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
-        </button><div class="dropdown" id="menuList" role="menu" aria-label="Menü">
+      <div class="right"><div class="dropdown" id="menuList" role="menu" aria-label="Menü">
   <div class="menu-stack">
     <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalSettings">Einstellungen</a>
     <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalChangelog">Changelog</a>
@@ -47,7 +46,39 @@
 </div></div></div></div></div>
       </div>
     </div>
-  </header>
+  <!-- Staggered Menu (vanilla) -->
+<div class="sm-wrap">
+  <button class="sm-toggle" aria-label="Menü öffnen/schließen" type="button">
+    <span class="sm-icon">
+      <span class="sm-icon-line h"></span>
+      <span class="sm-icon-line v"></span>
+    </span>
+  </button>
+
+  <div class="sm-layers">
+    <div class="sm-layer"></div>
+    <div class="sm-layer"></div>
+  </div>
+
+  <aside class="sm-panel" aria-hidden="true">
+    <div class="sm-head">
+      <a class="sm-logo" href="index.html">oberstufe.site</a>
+    </div>
+    <ul class="sm-list" data-numbering="true">
+      <li class="sm-item"><a class="sm-link" data-idx="01" href="index.html" aria-label="Zur Startseite">Home</a></li>
+      <li class="sm-item"><a class="sm-link" data-idx="02" href="settings.html" aria-label="Zu den Einstellungen">Einstellungen</a></li>
+      <li class="sm-item"><a class="sm-link" data-idx="03" href="admin/index.html" aria-label="Zum Admin-Login">Projekte</a></li>
+      <li class="sm-item"><a class="sm-link" data-idx="04" href="contact.html" aria-label="Kontakt - Coming soon">Kontakt</a></li>
+    </ul>
+    <div class="sm-socials">
+      <a href="mailto:info@oberstufe.site" aria-label="Schreibe uns per Gmail">Gmail</a>
+      <a href="https://docs.google.com" target="_blank" rel="noopener" aria-label="Öffne Google Docs">Google Docs</a>
+    </div>
+  </aside>
+</div>
+<!-- /Staggered Menu -->
+
+</header>
 
 
 
@@ -619,6 +650,7 @@ function badgeHTML(status){
 })();
 </script>
 
+  <script src="assets/staggered-menu.js"></script>
 </body>
 </html>
 </script></script>
