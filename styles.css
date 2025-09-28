@@ -3845,22 +3845,3 @@ header::before, .dropdown::before, .search::before, .card::before, .box::before,
   z-index: -1 !important;
 }
 
-
-
-/* === Header: fixed glass override (added by assistant) === */
-:root{ --header-offset: 76px; }
-header{
-  position: fixed !important;
-  top: 0; left: 0; right: 0;
-  z-index: 1200;
-  background: var(--glass-bg) !important;
-  -webkit-backdrop-filter: blur(10px) saturate(180%) !important;
-  backdrop-filter: blur(10px) saturate(180%) !important;
-  border-bottom: 1px solid var(--glass-border) !important;
-}
-header .wrap{ padding-top: 12px; padding-bottom: 12px; }
-body{ padding-top: var(--header-offset); }
-
-/* Ensure header pseudo glass sits behind content */
-header{ isolation:isolate; }
-header::before{ z-index: -1; }

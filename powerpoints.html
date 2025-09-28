@@ -21,6 +21,7 @@
 
 <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/staggered-menu.css">
+  <link rel="stylesheet" href="assets/css/curved-loop.css">
 </head>
 <body>
 
@@ -96,7 +97,24 @@
 
     <section class="section">
     <div class="container">
-      <div id="pageGrid" class="card-grid two-cols"></div>
+      <section class="section curved-loop-section">
+  <div class="container">
+    <div class="curved-loop-wrap" aria-hidden="true">
+      <svg class="curved-loop-svg" viewBox="0 0 1440 120" role="img" aria-label="Coming soon">
+        <defs>
+          <path id="cl-path" d="M-100,40 Q500,440 1540,40" fill="none" stroke="transparent" />
+        </defs>
+        <text>
+          <textPath href="#cl-path" startOffset="-800px">
+            COMING SOON · COMING SOON · COMING SOON · COMING SOON · COMING SOON · COMING SOON ·
+          </textPath>
+        </text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div id="pageGrid" class="card-grid two-cols"></div>
     </div>
   </section>
 <footer>
@@ -463,5 +481,6 @@
 </script>
 
   <script src="assets/staggered-menu.js"></script>
+  <script src="assets/js/curved-loop.js"></script>
 </body>
 </html>
